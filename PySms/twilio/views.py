@@ -1,7 +1,12 @@
-from django.shortcuts import render
+import os
 
+from django.shortcuts import render
 # Create your views here.
 from .models import Sms
+
+print os.environ.get('TWILIO_ACCOUNT_SID')
+
+print os.environ.get('TWILIO_AUTH_TOKEN')
 
 def index(request):
 	context = {'message': "Ready to send a message"}
