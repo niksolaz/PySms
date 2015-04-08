@@ -26,5 +26,7 @@ def sms_list(request):
 	context = {'latest_sms': latest_sms}
 	return render(request,'SendSms/sms.html',context)
 
-twilio_message('message','number')
+#--remove '#' in front of call function   
+
+#twilio_message('message','number')
 
