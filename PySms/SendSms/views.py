@@ -11,6 +11,7 @@ print os.environ.get('TWILIO_ACCOUNT_SID')
 print os.environ.get('TWILIO_AUTH_TOKEN')
 
 
+
 def index(request):
 	context = {'message': "Ready to send a message"}
 	if request.method == 'POST':
@@ -24,3 +25,6 @@ def sms_list(request):
 	latest_sms = Sms.objects.order_by('-pub_date')[:5]
 	context = {'latest_sms': latest_sms}
 	return render(request,'SendSms/sms.html',context)
+
+twilio_message('message','number')
+
